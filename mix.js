@@ -34,6 +34,12 @@ class NovaExtension {
         webpackConfig.output = {
             uniqueName: this.name,
         };
+
+        if (Array.isArray(webpackConfig.plugins)) {
+            webpackConfig.plugins = webpackConfig.plugins.filter(
+                (plugin) => plugin?.constructor?.name !== 'WebpackBarPlugin'
+            );
+        }
     }
 }
 

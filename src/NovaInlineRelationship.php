@@ -93,7 +93,7 @@ class NovaInlineRelationship extends Field
      *
      * @return void
      */
-    public function resolveForDisplay($resource, $attribute = null)
+    public function resolveForDisplay($resource, ?string $attribute = null): void
     {
         parent::resolveForDisplay($resource, $attribute);
 
@@ -112,7 +112,7 @@ class NovaInlineRelationship extends Field
      *
      * @return void
      */
-    public function resolve($resource, $attribute = null)
+    public function resolve($resource, ?string $attribute = null): void
     {
         parent::resolve($resource, $attribute);
 
