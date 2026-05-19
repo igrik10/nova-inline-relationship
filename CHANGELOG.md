@@ -23,3 +23,9 @@ This document is meant for tracking notable changes to `nova-chartjs`
 ## 0.4.0
 - updates for PHP 8.2
 - fix stdClass::forceFill() error for laravel nova > 4.25.1
+
+## 0.4.1
+- fix `RelationshipRule` so child-field rules (e.g. `Text::make('Phone')->rules('required')`)
+  validate the payload's `{ values: {...}, modelId: ... }` envelope shape instead of the
+  unwrapped form. Error keys are rewritten as `{attribute}.{index}.values.{child}` so the
+  frontend can match them by original field path.
